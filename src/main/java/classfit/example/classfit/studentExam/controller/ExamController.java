@@ -33,7 +33,7 @@ public class ExamController {
     @GetMapping("/{examId}")
     public ApiResponse<List<ShowExamClassStudentResponse>> findExamClassStuent(
             @RequestHeader(name = "member-no", required = false) Long memberId,
-            @PathVariable Long examId
+            @PathVariable(name = "examId") Long examId
     ) {
         List<ShowExamClassStudentResponse> response = examService.findExamClassStuent(memberId,
                 examId);
